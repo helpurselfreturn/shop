@@ -1,0 +1,12 @@
+{
+    "rewrites": [
+        {
+            "source": "/alpha_industries",
+            "destination": "/alpha_industries/index.html"
+        },
+        {
+            "source": "/alpha_industries/",
+            "destination": "/alpha_industries/index.html"
+        }
+    ]
+}

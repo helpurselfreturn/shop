@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Djo.company</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-left">
+      <a href="#" class="nav-link">Collections</a>
+    </div>
+
+    <div class="logo-container">
+      <a href="#" class="logo">DJO.COMPANY</a>
+    </div>
+
+    <div class="header-right">
+      <div class="nav-links">
+        <button class="icon-btn" id="searchBtn" title="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+        <span class="nav-divider">|</span>
+        <button class="lang-btn" id="langToggle">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay hidden" id="searchOverlay">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="SEARCH PRODUCTS..." id="searchInput">
+      <button class="search-close" id="searchClose">✕</button>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <img src="public/images/толстый пидорас.jpg" alt="Technical Weave Texture" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="mono">SS/26 SYSTEM</p>
+      <h1 class="hero-title">FUNCTIONAL<br>PROTECTION</h1>
+      <button class="hero-btn" id="exploreBtn">Explore</button>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar-sticky">
+    <div class="filter-container">
+      <div class="filter-chip active">All Items</div>
+      <div class="filter-chip">Outerwear</div>
+      <div class="filter-chip">Trousers</div>
+      <div class="filter-chip">Knitwear</div>
+      <div class="filter-chip">Accessories</div>
+      <div class="filter-chip">Footwear</div>
+      <div class="filter-chip">Archive</div>
+    </div>
+  </div>
+
+  <!-- CATALOG -->
+  <section class="catalog-section" id="new-arrivals">
+    <div class="section-header">
+      <h2 class="section-title">New Arrivals</h2>
+      <p class="mono">Displaying 1-8 of 24 Units</p>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- PRODUCT 1 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="public/images/stone_1.PNG" alt="Product" class="product-image">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3 class="product-title">Poly Shell Jacket</h3>
+            <p class="product-cat">OUTERWEAR / GORE-TEX</p>
+          </div>
+          <span class="product-price">$850.00</span>
+        </div>
+      </div>
+
+      <!-- PRODUCT 2 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="public/images/CWU_1.png" alt="Product" class="product-image">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3 class="product-title">CWU 45/P Bomber</h3>
+            <p class="product-cat">FIELD GEAR / NYLON</p>
+          </div>
+          <span class="product-price">$225.00</span>
+        </div>
+      </div>
+
+      <!-- PRODUCT 3 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="public/images/sumka_1.JPG" alt="Product" class="product-image">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3 class="product-title">Unit 01 Sling</h3>
+            <p class="product-cat">ACCESSORIES / CORDURA</p>
+          </div>
+          <span class="product-price">$180.00</span>
+        </div>
+      </div>
+
+      <!-- PRODUCT 4 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="public/images/stone_back.png" alt="Product" class="product-image">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3 class="product-title">Ghost Overshirt</h3>
+            <p class="product-cat">MID-LAYER / VENTILE</p>
+          </div>
+          <span class="product-price">$540.00</span>
+        </div>
+      </div>
+
+      <!-- PRODUCT 5 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="public/images/CWU_2.png" alt="Product" class="product-image">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3 class="product-title">CWU 45/P Olive</h3>
+            <p class="product-cat">FIELD GEAR / NYLON</p>
+          </div>
+          <span class="product-price">$225.00</span>
+        </div>
+      </div>
+
+      <!-- PRODUCT 6 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="public/images/sumka_2.JPG" alt="Product" class="product-image">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3 class="product-title">Unit 02 Crossbody</h3>
+            <p class="product-cat">ACCESSORIES / CORDURA</p>
+          </div>
+          <span class="product-price">$145.00</span>
+        </div>
+      </div>
+
+      <!-- PRODUCT 7 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="public/images/stone_patch.jpg" alt="Product" class="product-image">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3 class="product-title">Compass Badge Set</h3>
+            <p class="product-cat">ACCESSORIES</p>
+          </div>
+          <span class="product-price">$45.00</span>
+        </div>
+      </div>
+
+      <!-- PRODUCT 8 -->
+      <div class="product-card">
+        <div class="product-image-wrapper">
+          <img src="public/images/jacket-detail.png" alt="Product" class="product-image">
+        </div>
+        <div class="product-info">
+          <div>
+            <h3 class="product-title">Gore-Tex Shell V2</h3>
+            <p class="product-cat">OUTERWEAR / PRO SHELL</p>
+          </div>
+          <span class="product-price">$780.00</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li>New Arrivals</li>
+        <li>Outerwear</li>
+        <li>Accessories</li>
+        <li>Archive</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <ul>
+        <li>Shipping</li>
+        <li>Returns</li>
+        <li>Size Guide</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <ul>
+        <li>Instagram</li>
+        <li>Twitter</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p class="mono" style="color: var(--secondary-text)">Subscribe for early access.</p>
+    </div>
+  </footer>
+
+  <!-- PRODUCT MODAL -->
+  <div class="product-modal hidden" id="productModal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-content">
+      <div class="modal-image-col">
+        <img src="" alt="Product Detail" class="modal-main-img" id="modalImg">
+      </div>
+      <div class="modal-details-col">
+        <div class="modal-breadcrumbs mono">
+          <span>Collections</span> / <span id="modalCategory"></span>
+        </div>
+        <h1 class="modal-title" id="modalTitle"></h1>
+        <p class="modal-subtitle mono" id="modalSubtitle">Technical outerwear collection</p>
+
+        <div class="modal-intro" id="modalIntro">
+          <p>Advanced technical apparel designed for urban utility and protection against the elements.</p>
+        </div>
+
+        <p class="modal-price" id="modalPrice"></p>
+
+        <!-- COLOR -->
+        <div class="color-section">
+          <span class="section-label mono">COLOR: <span id="colorName">Black</span></span>
+          <div class="color-swatches">
+            <div class="color-swatch active" style="background:#1a1a1a" data-color="Black"></div>
+            <div class="color-swatch" style="background:#4a5568" data-color="Charcoal"></div>
+            <div class="color-swatch" style="background:#6b8e23" data-color="Olive"></div>
+          </div>
+        </div>
+
+        <!-- SIZE -->
+        <div class="size-section">
+          <div class="size-header">
+            <span class="section-label mono">SIZE:</span>
+            <button class="find-size-btn mono" id="findSizeBtn">FIND MY SIZE</button>
+          </div>
+          <div class="size-grid" id="sizeGrid">
+            <button class="size-btn">S</button>
+            <button class="size-btn">M</button>
+            <button class="size-btn active">L</button>
+            <button class="size-btn">XL</button>
+            <button class="size-btn">XXL</button>
+          </div>
+          <p class="fit-info mono">FIT: Regular. The model is wearing size L and is 185cm tall.</p>
+        </div>
+
+        <!-- SIZE GUIDE TABLE -->
+        <div class="size-guide-panel hidden" id="sizeGuidePanel">
+          <table class="size-guide-table">
+            <thead>
+              <tr>
+                <th>SIZE</th>
+                <th>LENGTH</th>
+                <th>CHEST</th>
+                <th>SHOULDERS</th>
+                <th>SLEEVE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>S</td>
+                <td>64</td>
+                <td>110</td>
+                <td>44</td>
+                <td>62</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>65</td>
+                <td>118</td>
+                <td>46</td>
+                <td>63</td>
+              </tr>
+              <tr class="highlight">
+                <td>L</td>
+                <td>66</td>
+                <td>126</td>
+                <td>48</td>
+                <td>63</td>
+              </tr>
+              <tr>
+                <td>XL</td>
+                <td>67</td>
+                <td>134</td>
+                <td>50</td>
+                <td>65</td>
+              </tr>
+              <tr>
+                <td>XXL</td>
+                <td>67</td>
+                <td>142</td>
+                <td>52</td>
+                <td>66</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="size-note mono">* Garment measures in cm</p>
+        </div>
+
+        <button class="add-to-bag-btn" id="addToBagBtn">ADD TO BAG</button>
+
+        <!-- EXPANDABLE SECTIONS -->
+        <div class="accordion-sections">
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="fabricPanel">
+              <span>FABRIC AND RESEARCH</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content hidden" id="fabricPanel">
+              <p id="fabricDesc">Stand collar jacket in Stone Island's Nylon Metal fabric. The evolution of this iconic
+                material sees the use of ECONYL® regenerated yarns: the life-ended nylon, pre- and post-consumer, is
+                recycled with a complex depolymerization process to create this fiber that features the same intrinsic
+                characteristics of nylon from fossil raw material.</p>
+              <ul class="fabric-features mono" id="fabricFeatures">
+                <li>⬡ DOUBLE DYE FORMULA</li>
+                <li>⬡ INNER RESIN COATING</li>
+                <li>⬡ ANTI-DROP FINISH</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="stylePanel">
+              <span>STYLE AND FIT</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content hidden" id="stylePanel">
+              <ul class="style-list mono" id="styleList">
+                <li>Regular fit</li>
+                <li>Stand collar with concealed hood</li>
+                <li>Two-way front zipper</li>
+                <li>Removable Stone Island badge on left sleeve</li>
+                <li>Ribbed cuffs and hem</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="carePanel">
+              <span>COMPOSITION AND CARE</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content hidden" id="carePanel">
+              <ul class="care-list mono" id="careList">
+                <li>Shell: 100% Nylon</li>
+                <li>Lining: 100% Polyester</li>
+                <li>Machine wash cold, gentle cycle</li>
+                <li>Do not bleach</li>
+                <li>Tumble dry low</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" data-target="shippingPanel">
+              <span>SHIPPING & RETURN</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content hidden" id="shippingPanel">
+              <ul class="shipping-list mono" id="shippingList">
+                <li>Free standard shipping on orders over $300</li>
+                <li>Express delivery: 2-3 business days</li>
+                <li>Free returns within 30 days</li>
+                <li>Items must be unworn with tags attached</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
