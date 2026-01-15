@@ -918,10 +918,10 @@ img {
   font-size: 10px;
 }
 
-/* ADD TO BAG */
+/* ADD TO BAG (TELEGRAM) */
 .add-to-bag-btn {
   width: 100%;
-  padding: 18px;
+  padding: 16px;
   background-color: var(--text-color);
   color: var(--bg-color);
   border: none;
@@ -929,13 +929,19 @@ img {
   font-size: var(--text-sm);
   text-transform: uppercase;
   font-weight: 600;
-  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: var(--spacing-lg);
   transition: all 0.2s;
 }
 
 .add-to-bag-btn:hover {
   opacity: 0.9;
+  background-color: #24A1DE;
+  /* Telegram Blue on hover */
+  color: white;
 }
 
 /* ACCORDION SECTIONS */

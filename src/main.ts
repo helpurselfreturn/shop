@@ -24,7 +24,6 @@ interface Translations {
     selectSize: string;
     findMySize: string;
     addToBag: string;
-    added: string;
     fabricResearch: string;
     styleFit: string;
     compositionCare: string;
@@ -60,8 +59,7 @@ const translationsData: Record<'en' | 'ru', Translations> = {
         searchPlaceholder: 'SEARCH PRODUCTS...',
         selectSize: 'SIZE:',
         findMySize: 'FIND MY SIZE',
-        addToBag: 'ADD TO BAG',
-        added: 'ADDED ✓',
+        addToBag: 'ORDER ON TELEGRAM',
         fabricResearch: 'FABRIC AND RESEARCH',
         styleFit: 'STYLE AND FIT',
         compositionCare: 'COMPOSITION AND CARE',
@@ -95,8 +93,7 @@ const translationsData: Record<'en' | 'ru', Translations> = {
         searchPlaceholder: 'ПОИСК ТОВАРОВ...',
         selectSize: 'РАЗМЕР:',
         findMySize: 'ПОДОБРАТЬ РАЗМЕР',
-        addToBag: 'В КОРЗИНУ',
-        added: 'ДОБАВЛЕНО ✓',
+        addToBag: 'ЗАКАЗАТЬ В TELEGRAM',
         fabricResearch: 'МАТЕРИАЛ И ТЕХНОЛОГИИ',
         styleFit: 'СТИЛЬ И ПОСАДКА',
         compositionCare: 'СОСТАВ И УХОД',
@@ -297,7 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.querySelector('.size-header .section-label')!.textContent = t.selectSize;
         findSizeBtn!.textContent = t.findMySize;
-        addToBagBtn!.textContent = t.addToBag;
+        if (addToBagBtn) {
+            let btnText = addToBagBtn.querySelector('.btn-text');
+            if (btnText) btnText.textContent = t.addToBag;
+        }
         document.querySelector('.fit-info')!.textContent = t.fit;
         document.querySelector('.color-section .section-label')!.innerHTML = t.color + ' <span id="colorName">Black</span>';
 
@@ -474,13 +474,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === ADD TO BAG ===
-    addToBagBtn?.addEventListener('click', () => {
-        const t = translationsData[currentLang];
-        addToBagBtn.textContent = t.added;
-        addToBagBtn.style.backgroundColor = '#4CAF50';
-        setTimeout(() => {
-            addToBagBtn.textContent = t.addToBag;
-            addToBagBtn.style.backgroundColor = '';
-        }, 1500);
-    });
+    // === ADD TO BAG (TELEGRAM) ===
+    // No JS needed for simple link behavior with target="_blank"
 });
