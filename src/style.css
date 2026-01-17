@@ -620,13 +620,15 @@ select {
   transition: border-color var(--transition-fast);
 }
 
-.product-card:hover::before {
-  border-color: var(--accent-primary);
-}
+@media (hover: hover) {
+  .product-card:hover::before {
+    border-color: var(--accent-primary);
+  }
 
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
 }
 
 .product-image-wrapper {
@@ -649,8 +651,10 @@ select {
   transition: transform var(--transition-slower);
 }
 
-.product-card:hover .product-image {
-  transform: scale(1.08);
+@media (hover: hover) {
+  .product-card:hover .product-image {
+    transform: scale(1.08);
+  }
 }
 
 /* Product Badge */
@@ -1408,15 +1412,37 @@ select {
   }
 }
 
-/* Mobile Hero */
+/* Mobile Hero & Header */
 @media (max-width: 768px) {
+  .header-left {
+    display: none;
+  }
+
+  .site-header {
+    justify-content: center;
+    padding: 0 var(--space-4);
+  }
+
+  .logo-container {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+
+  .header-right {
+    position: absolute;
+    right: var(--space-4);
+  }
+
   .hero {
     height: 85vh;
     min-height: 500px;
   }
 
   .hero-title {
-    font-size: var(--text-3xl);
+    font-size: 2.5rem;
+    /* Reduced from 3xl for long words */
+    word-break: break-word;
   }
 
   .hero-btn {
