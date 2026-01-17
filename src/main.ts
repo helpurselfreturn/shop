@@ -66,7 +66,7 @@ const translationsData: Record<'en' | 'ru', Translations> = {
         loadMore: 'Load More',
         aboutTitle: 'Technical Apparel for Urban Environments',
         aboutDescription: 'We curate the finest technical and functional clothing from leading brands like Stone Island, Alpha Industries, and exclusive collaborations. Each piece is selected for its innovative materials, construction quality, and urban utility.',
-        shop: 'Shop',
+
         info: 'Info',
         follow: 'Contact',
         newsletter: 'Newsletter',
@@ -120,7 +120,7 @@ const translationsData: Record<'en' | 'ru', Translations> = {
         loadMore: 'Загрузить ещё',
         aboutTitle: 'Техническая одежда для городской среды',
         aboutDescription: 'Мы курируем лучшую техническую и функциональную одежду от ведущих брендов: Stone Island, Alpha Industries и эксклюзивные коллаборации. Каждая вещь выбрана за инновационные материалы, качество конструкции и городскую утилитарность.',
-        shop: 'Магазин',
+
         info: 'Информация',
         follow: 'Контакты',
         newsletter: 'Рассылка',
@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ticking = false;
 
     const updateHeader = () => {
-        const header = document.querySelector('.site-header');
+        const header = document.querySelector('.site-header') as HTMLElement;
         if (!header) return;
 
         if (window.scrollY > 100) {
