@@ -3,8 +3,10 @@ import './style.css'
 // === TRANSLATIONS ===
 interface Translations {
     collections: string;
+    shop: string;
     heroSubtitle: string;
     heroTitle: string;
+    heroDescription: string;
     explore: string;
     allItems: string;
     outerwear: string;
@@ -15,7 +17,9 @@ interface Translations {
     archive: string;
     newArrivals: string;
     displaying: string;
-    shop: string;
+    loadMore: string;
+    aboutTitle: string;
+    aboutDescription: string;
     info: string;
     follow: string;
     newsletter: string;
@@ -34,14 +38,22 @@ interface Translations {
     careItems: string[];
     shippingItems: string[];
     sizeNote: string;
+    authentic: string;
+    support: string;
+    delivery: string;
+    fcLabel: string;
+    fcButton: string;
+    quotes: string[];
 }
 
 const translationsData: Record<'en' | 'ru', Translations> = {
     en: {
         collections: 'Collections',
-        heroSubtitle: 'SS/26 SYSTEM',
+        shop: 'Shop',
+        heroSubtitle: 'SS/26 COLLECTION',
         heroTitle: 'FUNCTIONAL<br>PROTECTION',
-        explore: 'Explore',
+        heroDescription: 'Advanced technical apparel designed for urban utility and protection against the elements.',
+        explore: 'Explore Collection',
         allItems: 'All Items',
         outerwear: 'Outerwear',
         trousers: 'Trousers',
@@ -50,12 +62,15 @@ const translationsData: Record<'en' | 'ru', Translations> = {
         footwear: 'Footwear',
         archive: 'Archive',
         newArrivals: 'New Arrivals',
-        displaying: 'Displaying 1-8 of 24 Units',
+        displaying: 'Displaying 1-6 of 24 Units',
+        loadMore: 'Load More',
+        aboutTitle: 'Technical Apparel for Urban Environments',
+        aboutDescription: 'We curate the finest technical and functional clothing from leading brands like Stone Island, Alpha Industries, and exclusive collaborations. Each piece is selected for its innovative materials, construction quality, and urban utility.',
         shop: 'Shop',
         info: 'Info',
-        follow: 'Follow',
+        follow: 'Contact',
         newsletter: 'Newsletter',
-        subscribe: 'Subscribe for early access.',
+        subscribe: 'Subscribe for exclusive drops and early access.',
         searchPlaceholder: 'SEARCH PRODUCTS...',
         selectSize: 'SIZE:',
         findMySize: 'FIND MY SIZE',
@@ -69,13 +84,30 @@ const translationsData: Record<'en' | 'ru', Translations> = {
         styleItems: ['Regular fit', 'Stand collar with concealed hood', 'Two-way front zipper', 'Removable Stone Island badge on left sleeve', 'Ribbed cuffs and hem'],
         careItems: ['Shell: 100% Nylon', 'Lining: 100% Polyester', 'Machine wash cold, gentle cycle', 'Do not bleach', 'Tumble dry low'],
         shippingItems: ['Free standard shipping on orders over $300', 'Express delivery: 2-3 business days', 'Free returns within 30 days', 'Items must be unworn with tags attached'],
-        sizeNote: '* Garment measures in cm'
+        sizeNote: '* Garment measures in cm',
+        authentic: 'Authentic',
+        support: 'Support',
+        delivery: 'Delivery',
+        fcLabel: 'PROJECT MAYHEM // REBIRTH',
+        fcButton: 'GENERATE CHAOS',
+        quotes: [
+            "It's only after we've lost everything that we're free to do anything.",
+            "This is your life and it's ending one minute at a time.",
+            "The things you own end up owning you.",
+            "Losing all hope was freedom.",
+            "Self-improvement is masturbation. Now self-destruction is the answer.",
+            "You are not your job, you're not how much money you have in the bank.",
+            "We have no Great War. No Great Depression. Our Great War's a spiritual war.",
+            "Reject the basic assumptions of civilization, especially the importance of material possessions."
+        ]
     },
     ru: {
         collections: 'Коллекции',
-        heroSubtitle: 'SS/26 СИСТЕМА',
+        shop: 'Магазин',
+        heroSubtitle: 'SS/26 КОЛЛЕКЦИЯ',
         heroTitle: 'ФУНКЦИОНАЛЬНАЯ<br>ЗАЩИТА',
-        explore: 'Смотреть',
+        heroDescription: 'Продвинутая техническая одежда для городской утилитарности и защиты от стихий.',
+        explore: 'Смотреть коллекцию',
         allItems: 'Все товары',
         outerwear: 'Верхняя одежда',
         trousers: 'Брюки',
@@ -84,12 +116,15 @@ const translationsData: Record<'en' | 'ru', Translations> = {
         footwear: 'Обувь',
         archive: 'Архив',
         newArrivals: 'Новинки',
-        displaying: 'Показано 1-8 из 24',
+        displaying: 'Показано 1-6 из 24',
+        loadMore: 'Загрузить ещё',
+        aboutTitle: 'Техническая одежда для городской среды',
+        aboutDescription: 'Мы курируем лучшую техническую и функциональную одежду от ведущих брендов: Stone Island, Alpha Industries и эксклюзивные коллаборации. Каждая вещь выбрана за инновационные материалы, качество конструкции и городскую утилитарность.',
         shop: 'Магазин',
         info: 'Информация',
-        follow: 'Соцсети',
+        follow: 'Контакты',
         newsletter: 'Рассылка',
-        subscribe: 'Подпишитесь на ранний доступ.',
+        subscribe: 'Подпишитесь на эксклюзивные дропы и ранний доступ.',
         searchPlaceholder: 'ПОИСК ТОВАРОВ...',
         selectSize: 'РАЗМЕР:',
         findMySize: 'ПОДОБРАТЬ РАЗМЕР',
@@ -103,7 +138,22 @@ const translationsData: Record<'en' | 'ru', Translations> = {
         styleItems: ['Обычный крой', 'Стойка воротник со скрытым капюшоном', 'Двусторонняя молния', 'Съёмный бейдж Stone Island на левом рукаве', 'Рифлёные манжеты и низ'],
         careItems: ['Верх: 100% Нейлон', 'Подкладка: 100% Полиэстер', 'Машинная стирка, деликатный режим', 'Не отбеливать', 'Сушка при низкой температуре'],
         shippingItems: ['Бесплатная доставка при заказе от $300', 'Экспресс-доставка: 2-3 рабочих дня', 'Бесплатный возврат в течение 30 дней', 'Товар должен быть без следов носки с бирками'],
-        sizeNote: '* Размеры изделия в см'
+        sizeNote: '* Размеры изделия в см',
+        authentic: 'Оригинал',
+        support: 'Поддержка',
+        delivery: 'Доставка',
+        fcLabel: 'ПРОЕКТ РАЗГРОМ // ВОЗРОЖДЕНИЕ',
+        fcButton: 'ГЕНЕРИРОВАТЬ ХАОС',
+        quotes: [
+            "Лишь утратив всё до конца, мы обретаем свободу делать всё что угодно.",
+            "Это твоя жизнь, и она становится короче с каждой минутой.",
+            "Вещи, которыми ты владеешь, в конце концов начинают владеть тобой.",
+            "Потерять всякую надежду — вот что такое свобода.",
+            "Самосовершенствование — онанизм. Саморазрушение — вот что нам нужно.",
+            "Ты — это не твоя работа. Ты — это не твой счет в банке.",
+            "У нас нет Великой войны. Нет Великой депрессии. Наша Великая война — духовная.",
+            "Отринь базовые устои цивилизации, особенно важность материального."
+        ]
     }
 };
 
@@ -129,6 +179,21 @@ const productData: Record<string, {
             ru: ['⬡ ДВОЙНОЕ ОКРАШИВАНИЕ', '⬡ СМОЛЯНОЕ ПОКРЫТИЕ', '⬡ АНТИКАПЕЛЬНАЯ ОБРАБОТКА']
         }
     },
+    'Stone Island x Supreme': {
+        subtitle: 'NYLON METAL IN ECONYL® / COLLAB',
+        intro: {
+            en: 'Exclusive collaboration between Stone Island and Supreme. Limited edition technical jacket.',
+            ru: 'Эксклюзивная коллаборация Stone Island и Supreme. Лимитированная техническая куртка.'
+        },
+        fabric: {
+            en: 'Premium Nylon Metal fabric with signature Stone Island dyeing process and Supreme branding.',
+            ru: 'Премиальная ткань Nylon Metal с фирменным окрашиванием Stone Island и брендингом Supreme.'
+        },
+        features: {
+            en: ['⬡ LIMITED EDITION', '⬡ NYLON METAL', '⬡ DUAL BRANDING'],
+            ru: ['⬡ ЛИМИТИРОВАННАЯ СЕРИЯ', '⬡ NYLON METAL', '⬡ ДВОЙНОЙ БРЕНДИНГ']
+        }
+    },
     'CWU 45/P Bomber': {
         subtitle: 'MIL-SPEC FLIGHT JACKET / MA-1',
         intro: {
@@ -142,21 +207,6 @@ const productData: Record<string, {
         features: {
             en: ['⬡ MIL-SPEC NYLON', '⬡ ORANGE LINING', '⬡ STORM FLAP'],
             ru: ['⬡ НЕЙЛОН MIL-SPEC', '⬡ ОРАНЖЕВАЯ ПОДКЛАДКА', '⬡ ВЕТРОЗАЩИТНАЯ ПЛАНКА']
-        }
-    },
-    'CWU 45/P Olive': {
-        subtitle: 'MIL-SPEC FLIGHT JACKET / MA-1',
-        intro: {
-            en: 'Classic olive variant of the iconic CWU 45/P flight jacket.',
-            ru: 'Классический оливковый вариант культовой лётной куртки CWU 45/P.'
-        },
-        fabric: {
-            en: 'Heavy-duty nylon construction following original military specifications.',
-            ru: 'Прочная нейлоновая конструкция по оригинальным военным спецификациям.'
-        },
-        features: {
-            en: ['⬡ OLIVE DRAB', '⬡ KNIT COLLAR', '⬡ UTILITY POCKETS'],
-            ru: ['⬡ ОЛИВКОВЫЙ', '⬡ ВЯЗАНЫЙ ВОРОТНИК', '⬡ КАРМАНЫ UTILITY']
         }
     },
     'Unit 01 Sling': {
@@ -187,21 +237,6 @@ const productData: Record<string, {
         features: {
             en: ['⬡ 500D CORDURA®', '⬡ WATER RESISTANT', '⬡ YKK ZIPPERS'],
             ru: ['⬡ 500D CORDURA®', '⬡ ВОДОСТОЙКОСТЬ', '⬡ МОЛНИИ YKK']
-        }
-    },
-    'Ghost Overshirt': {
-        subtitle: 'GHOST PIECE / VENTILE® COTTON',
-        intro: {
-            en: 'Part of the Ghost collection with Stone Island\'s signature tonal dyeing technique.',
-            ru: 'Часть коллекции Ghost с фирменной техникой тонального окрашивания.'
-        },
-        fabric: {
-            en: 'Overshirt in Ventile® cotton, a tightly woven fabric historically used for aviation.',
-            ru: 'Рубашка из хлопка Ventile® — плотной ткани, исторически использовавшейся в авиации.'
-        },
-        features: {
-            en: ['⬡ VENTILE® COTTON', '⬡ GHOST DYE', '⬡ HIDDEN BADGE'],
-            ru: ['⬡ ХЛОПОК VENTILE®', '⬡ ОКРАСКА GHOST', '⬡ СКРЫТЫЙ БЕЙДЖ']
         }
     },
     'Compass Badge Set': {
@@ -239,6 +274,7 @@ const productData: Record<string, {
 let currentLang: 'en' | 'ru' = 'en';
 
 document.addEventListener('DOMContentLoaded', () => {
+    // === DOM ELEMENTS ===
     const modal = document.getElementById('productModal');
     const modalClose = document.getElementById('modalClose');
     const modalImg = document.getElementById('modalImg') as HTMLImageElement;
@@ -258,7 +294,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const langToggle = document.getElementById('langToggle');
 
     const exploreBtn = document.getElementById('exploreBtn');
-    const addToBagBtn = document.getElementById('addToBagBtn');
     const findSizeBtn = document.getElementById('findSizeBtn');
 
     const styleList = document.getElementById('styleList');
@@ -266,54 +301,149 @@ document.addEventListener('DOMContentLoaded', () => {
     const shippingList = document.getElementById('shippingList');
     const sizeNote = document.querySelector('.size-note');
 
+    // === INTERSECTION OBSERVER FOR ANIMATIONS ===
+    const observerOptions: IntersectionObserverInit = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const fadeInObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add staggered delay based on index
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
+                fadeInObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all fade-in elements
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+        fadeInObserver.observe(el);
+    });
+
+    // === HEADER SCROLL EFFECT ===
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateHeader = () => {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        // Hide/show header on scroll direction
+        if (window.scrollY > lastScrollY && window.scrollY > 200) {
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            header.style.transform = 'translateY(0)';
+        }
+
+        lastScrollY = window.scrollY;
+        ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    });
+
     // === LANGUAGE TOGGLE ===
     const updateLanguage = () => {
         const t = translationsData[currentLang];
 
-        document.querySelector('.header-left .nav-link')!.textContent = t.collections;
-        document.querySelector('.hero-content .mono')!.textContent = t.heroSubtitle;
-        document.querySelector('.hero-title')!.innerHTML = t.heroTitle;
-        exploreBtn!.textContent = t.explore;
+        // Header
+        const navLinks = document.querySelectorAll('.header-left .nav-link');
+        if (navLinks[0]) navLinks[0].textContent = t.collections;
+        if (navLinks[1]) navLinks[1].textContent = t.shop;
 
+        // Hero
+        const heroMono = document.querySelector('.hero-content .mono');
+        if (heroMono) heroMono.textContent = t.heroSubtitle;
+
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) heroTitle.innerHTML = t.heroTitle;
+
+        const heroSubtitle = document.querySelector('.hero-subtitle');
+        if (heroSubtitle) heroSubtitle.textContent = t.heroDescription;
+
+        if (exploreBtn) {
+            const btnSpan = exploreBtn.querySelector('span');
+            if (btnSpan) btnSpan.textContent = t.explore;
+        }
+
+        // Filter chips
         const chips = document.querySelectorAll('.filter-chip');
         const filterTexts = [t.allItems, t.outerwear, t.trousers, t.knitwear, t.accessories, t.footwear, t.archive];
         chips.forEach((chip, i) => {
             if (filterTexts[i]) chip.textContent = filterTexts[i];
         });
 
-        document.querySelector('.section-title')!.textContent = t.newArrivals;
-        document.querySelector('.section-header .mono')!.textContent = t.displaying;
+        // Section
+        const sectionTitle = document.querySelector('.section-title');
+        if (sectionTitle) sectionTitle.textContent = t.newArrivals;
 
+        const sectionMono = document.querySelector('.section-header .mono');
+        if (sectionMono) sectionMono.textContent = t.displaying;
+
+        // Footer
         const footerCols = document.querySelectorAll('.footer-col h4');
-        footerCols[0].textContent = t.shop;
-        footerCols[1].textContent = t.info;
-        footerCols[2].textContent = t.follow;
-        footerCols[3].textContent = t.newsletter;
+        if (footerCols[0]) footerCols[0].textContent = t.shop;
+        if (footerCols[1]) footerCols[1].textContent = t.info;
+        if (footerCols[2]) footerCols[2].textContent = t.follow;
+        if (footerCols[3]) footerCols[3].textContent = t.newsletter;
 
-        searchInput.placeholder = t.searchPlaceholder;
+        // Fight Club Section
+        const fcLabel = document.querySelector('.quote-label');
+        if (fcLabel) fcLabel.textContent = t.fcLabel;
 
-        document.querySelector('.size-header .section-label')!.textContent = t.selectSize;
-        findSizeBtn!.textContent = t.findMySize;
+        const fcButton = document.querySelector('.quote-btn .btn-text');
+        if (fcButton) fcButton.textContent = t.fcButton;
+
+        // Search
+        if (searchInput) searchInput.placeholder = t.searchPlaceholder;
+
+        // Modal
+        const sizeLabelEl = document.querySelector('.size-header .section-label');
+        if (sizeLabelEl) sizeLabelEl.textContent = t.selectSize;
+        if (findSizeBtn) findSizeBtn.textContent = t.findMySize;
+
+        const addToBagBtn = document.getElementById('addToBagBtn');
         if (addToBagBtn) {
-            let btnText = addToBagBtn.querySelector('.btn-text');
+            const btnText = addToBagBtn.querySelector('.btn-text');
             if (btnText) btnText.textContent = t.addToBag;
         }
-        document.querySelector('.fit-info')!.textContent = t.fit;
-        document.querySelector('.color-section .section-label')!.innerHTML = t.color + ' <span id="colorName">Black</span>';
 
+        const fitInfo = document.querySelector('.fit-info');
+        if (fitInfo) fitInfo.textContent = t.fit;
+
+        const colorLabelEl = document.querySelector('.color-section .section-label');
+        if (colorLabelEl) colorLabelEl.innerHTML = t.color + ' <span id="colorName">Black</span>';
+
+        // Accordion headers
         const accordionHeaders = document.querySelectorAll('.accordion-header span:first-child');
-        accordionHeaders[0].textContent = t.fabricResearch;
-        accordionHeaders[1].textContent = t.styleFit;
-        accordionHeaders[2].textContent = t.compositionCare;
-        accordionHeaders[3].textContent = t.shippingReturn;
+        if (accordionHeaders[0]) accordionHeaders[0].textContent = t.fabricResearch;
+        if (accordionHeaders[1]) accordionHeaders[1].textContent = t.styleFit;
+        if (accordionHeaders[2]) accordionHeaders[2].textContent = t.compositionCare;
+        if (accordionHeaders[3]) accordionHeaders[3].textContent = t.shippingReturn;
 
-        // Translate accordion content
+        // Accordion content
         if (styleList) styleList.innerHTML = t.styleItems.map(item => `<li>${item}</li>`).join('');
         if (careList) careList.innerHTML = t.careItems.map(item => `<li>${item}</li>`).join('');
         if (shippingList) shippingList.innerHTML = t.shippingItems.map(item => `<li>${item}</li>`).join('');
         if (sizeNote) sizeNote.textContent = t.sizeNote;
 
-        langToggle!.textContent = currentLang.toUpperCase();
+        // Lang toggle button
+        if (langToggle) langToggle.textContent = currentLang.toUpperCase();
     };
 
     langToggle?.addEventListener('click', () => {
@@ -321,20 +451,28 @@ document.addEventListener('DOMContentLoaded', () => {
         updateLanguage();
     });
 
-    // === SEARCH ===
-    searchBtn?.addEventListener('click', (e) => {
-        e.preventDefault();
+    // === SEARCH FUNCTIONALITY ===
+    const openSearch = () => {
         searchOverlay?.classList.remove('hidden');
-        searchInput?.focus();
-    });
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => searchInput?.focus(), 100);
+    };
 
-    searchClose?.addEventListener('click', () => {
+    const closeSearch = () => {
         searchOverlay?.classList.add('hidden');
-        searchInput.value = '';
+        document.body.style.overflow = '';
+        if (searchInput) searchInput.value = '';
         document.querySelectorAll('.product-card').forEach(card => {
             (card as HTMLElement).style.display = '';
         });
+    };
+
+    searchBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        openSearch();
     });
+
+    searchClose?.addEventListener('click', closeSearch);
 
     searchInput?.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase().trim();
@@ -347,16 +485,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchInput?.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
-            searchOverlay?.classList.add('hidden');
+            closeSearch();
             document.getElementById('new-arrivals')?.scrollIntoView({ behavior: 'smooth' });
         }
     });
 
+    // === KEYBOARD SHORTCUTS ===
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            searchOverlay?.classList.add('hidden');
-            modal?.classList.add('hidden');
-            document.body.style.overflow = '';
+            closeSearch();
+            closeModal();
+        }
+        // Open search with Cmd/Ctrl + K
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            openSearch();
         }
     });
 
@@ -365,16 +508,17 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('new-arrivals')?.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // === MODAL CLOSE ===
-    modalClose?.addEventListener('click', () => {
+    // === MODAL FUNCTIONS ===
+    const closeModal = () => {
         modal?.classList.add('hidden');
         document.body.style.overflow = '';
-    });
+    };
+
+    modalClose?.addEventListener('click', closeModal);
 
     modal?.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
+            closeModal();
         }
     });
 
@@ -383,19 +527,34 @@ document.addEventListener('DOMContentLoaded', () => {
         chip.addEventListener('click', () => {
             document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
             chip.classList.add('active');
-        });
-    });
 
-    // === HEADER SCROLL ===
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('.site-header');
-        if (window.scrollY > 50) header?.classList.add('scrolled');
-        else header?.classList.remove('scrolled');
+            const filter = (chip as HTMLElement).dataset.filter;
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const cardEl = card as HTMLElement;
+                const category = cardEl.dataset.category;
+
+                if (filter === 'all' || category === filter) {
+                    cardEl.style.display = '';
+                    // Re-trigger animation
+                    cardEl.classList.remove('visible');
+                    setTimeout(() => cardEl.classList.add('visible'), 50);
+                } else {
+                    cardEl.style.display = 'none';
+                }
+            });
+        });
     });
 
     // === PRODUCT CARD CLICK ===
     document.querySelectorAll('.product-card').forEach(card => {
-        card.addEventListener('click', () => {
+        card.addEventListener('click', (e) => {
+            // Prevent modal opening when clicking quick add button
+            if ((e.target as HTMLElement).closest('.quick-add-btn')) {
+                return;
+            }
+
             const cardEl = card as HTMLElement;
             const imgSrc = cardEl.querySelector('.product-image')?.getAttribute('src') || '';
             const title = cardEl.querySelector('.product-title')?.textContent || '';
@@ -420,19 +579,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 fabricFeatures.innerHTML = data.features[currentLang].map(f => `<li>${f}</li>`).join('');
             }
 
+            // Reset accordion and size guide
             sizeGuidePanel?.classList.add('hidden');
             document.querySelectorAll('.accordion-content').forEach(p => p.classList.add('hidden'));
             document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = '+');
+            document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
 
             modal?.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         });
     });
 
+    // === QUICK ADD BUTTON ===
+    document.querySelectorAll('.quick-add-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Open Telegram link
+            window.open('https://t.me/Omniraise', '_blank');
+        });
+    });
+
     // === SIZE SELECTION ===
     document.getElementById('sizeGrid')?.addEventListener('click', (e) => {
         const target = e.target as HTMLElement;
-        if (target.classList.contains('size-btn')) {
+        if (target.classList.contains('size-btn') && !target.classList.contains('disabled')) {
             document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
             target.classList.add('active');
 
@@ -444,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // === FIND MY SIZE ===
+    // === FIND MY SIZE TOGGLE ===
     findSizeBtn?.addEventListener('click', () => {
         sizeGuidePanel?.classList.toggle('hidden');
     });
@@ -465,15 +635,61 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = (header as HTMLElement).dataset.target;
             const content = document.getElementById(targetId || '');
             const icon = header.querySelector('.accordion-icon');
+            const item = header.closest('.accordion-item');
+
             if (content) {
                 const isHidden = content.classList.contains('hidden');
-                content.classList.toggle('hidden');
-                if (icon) icon.textContent = isHidden ? '−' : '+';
+
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.accordion-icon').forEach(i => i.textContent = '+');
+                document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    if (icon) icon.textContent = '−';
+                    if (item) item.classList.add('open');
+                }
             }
         });
     });
 
-    // === ADD TO BAG ===
-    // === ADD TO BAG (TELEGRAM) ===
-    // No JS needed for simple link behavior with target="_blank"
+    // === SMOOTH SCROLL FOR ANCHOR LINKS ===
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', (e) => {
+            const href = anchor.getAttribute('href');
+            if (href && href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    // === FIGHT CLUB QUOTE GENERATOR ===
+    const generateQuoteBtn = document.getElementById('generateQuoteBtn');
+    const quoteElement = document.getElementById('fcQuote');
+
+    generateQuoteBtn?.addEventListener('click', () => {
+        const t = translationsData[currentLang];
+        const quotes = t.quotes;
+        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+        if (quoteElement) {
+            quoteElement.style.opacity = '0';
+            setTimeout(() => {
+                quoteElement.textContent = `"${randomQuote}"`;
+                quoteElement.style.animation = 'none';
+                quoteElement.offsetHeight; /* trigger reflow */
+                quoteElement.style.animation = 'glitch 0.5s cubic-bezier(.25, .46, .45, .94) both infinite';
+                quoteElement.style.opacity = '1';
+                setTimeout(() => { quoteElement.style.animation = 'none'; }, 500);
+            }, 200);
+        }
+    });
+
+    // === INITIAL SETUP ===
+    updateLanguage();
 });
