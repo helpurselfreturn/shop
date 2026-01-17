@@ -476,16 +476,12 @@ select {
    ============================================ */
 
 .filter-bar-sticky {
-  position: sticky;
-  top: var(--header-height);
-  z-index: var(--z-sticky);
-  background: rgba(5, 5, 5, 0.85);
-  /* Darker, more transparent */
-  backdrop-filter: blur(var(--blur-lg));
-  -webkit-backdrop-filter: blur(var(--blur-lg));
+  position: relative;
+  z-index: 10;
+  background: rgba(10, 10, 10, 0.98);
+  /* Solid dark background */
+  border-bottom: 1px solid var(--border-subtle);
   padding: var(--space-4) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  /* subtler border */
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -500,48 +496,41 @@ select {
 .filter-container {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
-  /* Increased gap */
+  gap: var(--space-2);
   padding: 0 var(--space-6);
   min-width: max-content;
 }
 
 .filter-chip {
   flex-shrink: 0;
-  padding: var(--space-2) 0;
-  /* Text-only look mostly */
+  padding: var(--space-2) var(--space-5);
   font-family: var(--font-mono);
   font-size: 11px;
-  /* Slightly smaller/sharper */
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--text-muted);
   background: transparent;
-  border: none;
-  /* No border for cleaner look */
-  border-bottom: 1px solid transparent;
-  border-radius: 0;
-  /* Sharp edges */
+  border: 1px solid var(--border-default);
+  border-radius: 100px;
+  /* Rounded pill shape */
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
-  opacity: 0.6;
 }
 
 @media (hover: hover) {
   .filter-chip:hover {
     color: var(--text-primary);
-    opacity: 1;
+    border-color: var(--text-secondary);
+    background: var(--bg-tertiary);
   }
 }
 
 .filter-chip.active {
-  color: var(--text-primary);
-  border-bottom-color: var(--accent-primary);
-  opacity: 1;
-  background: transparent;
-  /* Remove background on active */
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+  background: var(--text-primary);
 }
 
 /* ============================================
@@ -723,14 +712,16 @@ select {
   height: 20px;
 }
 
-.product-card:hover .quick-add-btn {
-  opacity: 1;
-  transform: translateY(0);
-}
+@media (hover: hover) {
+  .product-card:hover .quick-add-btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-.quick-add-btn:hover {
-  background: var(--accent-primary);
-  transform: scale(1.1) !important;
+  .quick-add-btn:hover {
+    background: var(--accent-primary);
+    transform: scale(1.1) !important;
+  }
 }
 
 /* Product Info */
